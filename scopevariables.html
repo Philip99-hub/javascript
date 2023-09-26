@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    //   var  y=20
+    //     x=10
+    //     function check( ){
+    //          var y="ABC"
+    //         // y=555
+    //         console.log("inside x",x)
+    //         console.log("inside y",y)
+    //     }
+    //     check()
+    //     console.log("outside x",x)
+    //     console.log("outside y",y)
+
+        outside = "i am global";
+        var outside_var = "i am also global";
+        function test_scope(fn_param){
+            inside = "inside function but global";
+            var inside_var = "loca to fuction";
+            console.log(outside);
+            console.log(outside_var);
+            console.log(inside);
+            console.log(inside);
+            console.log(inside_var);
+            console.log(fn_param);
+        }
+        test_scope('ashish')
+        console.log(outside);
+            console.log(outside_var);
+            console.log(inside);
+            console.log(inside);
+            // console.log(inside_var);
+            // console.log(fn_param);
+
+
+                // promptbox
+
+                var name=prompt('enter your name','none')
+                // document.write(name)
+                console.log(name,typeof(name))
+
+    </script>
+    <script>
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" onclick="studentdetails">
+    <script>
+        function studentdetails(){
+
+        }
+        studentId = 10;
+        admissionNo = 100;
+        username = 'cybersquare'
+        marks = [90,92,85];
+        student = {'name':'Joseph', 'age':'20'};
+
+        data_type=typeof(studentId)
+        console.log(data_type)
+
+        console.log( typeof(admissionNo),typeof(username))
+        console.log( typeof(marks),typeof(student))
+
+        console.log(marks[1])
+        console.log(marks[0]+marks[1]+marks[2])
+
+        console.log(student.name)
+        console.log(student.age)
+
+        student.name="aaaaa"
+        console.log(student.name)
+
+        console.log(admissionNo+studentId)
+        console.log(admissionNo+username)
+        console.log(marks[1]+studentId)
+
+    </script>
+</body>
+
+</html>

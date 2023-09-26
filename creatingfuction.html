@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="showname('aaaaa')"> showname</button>
+    <br><br>
+    <button onclick="multiply(10,5)">multiply</button>
+    <br><br>
+    <button onclick="division(50,10)">divide</button>
+    <br><br>
+    <button onclick="arearect(5,10)">area of rectangle</button>
+    <br><br>
+    <button onclick="areacrcle(4)">circle of area</button>
+    <script>
+        function add(a, b) {
+            c = a + b
+            return c;
+        }
+        x = 10
+        y = 20
+        z = add(x, y)
+        console.log(z)
+
+
+        function showname(name) {
+            document.write(name)
+            console.log(name)
+        }
+
+        myname = "anu"
+        showname(myname)
+
+        // multiply function
+
+        function multiply(a, b) {
+            c = a * b
+            console.log(c)
+            document.write(c)
+            return c;
+        }
+        // x=10
+        // y=20
+        // z=multiply(x,y)
+        // console.log(z)
+
+        // division fuction
+
+        function division(p, q) {
+            r = p / q
+           
+            document.write(r)
+            console.log(r)
+            return r;
+        }
+
+        function arearect(l,w){
+            a=l*w
+           
+            console.log(a)
+            document.write(a)
+            return a;
+        }
+
+        function areacrcle(r){
+            a=2*3.141*r
+           
+            document.write(a)
+            return a;
+        }
+
+        // x=4
+        // z=areacrcle(x)
+        // console.log(z)
+      
+
+    </script>
+    
+
+
+</body>
+
+</html>
