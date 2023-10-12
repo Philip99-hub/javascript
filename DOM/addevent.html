@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="click">
+        click here
+    </button>
+    <button id="remov">
+        click to remove
+    </button>
+    <script>
+        btn1=document.getElementById('click')
+        btn1.addEventListener('click',alert1)
+
+        function alert1(event){
+            alert("button clicked")
+            console.log(event.target)
+        }
+
+        btn2=document.getElementById('remov')
+        btn2.onclick=function(event){
+
+            btn1.removeEventListener('click',alert1)
+            console.log(event.target)
+        }
+       
+    </script>
+</body>
+</html>

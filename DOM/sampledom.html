@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Document object model</h1>
+    <p class="content">
+        <b>
+            learn content through cybersquare
+        </b>
+    </p>
+    <p class="content">
+        best platform to learn coding
+    </p>
+<button onclick="show()">click</button>
+
+<input type="text" id="inp1">
+<button onclick="showName()">show name</button>
+    
+    <script>
+        // h=document.getElementById("heading")
+        // console.log(h)
+        // p=document.getElementsByTagName('p')
+        // console.log(p)
+        // p1=document.getElementsByClassName('content')
+        // console.log(p1)
+        
+      
+        p=document.querySelectorAll('p')
+        console.log(p[1])
+
+        // console.log(p1)
+
+        console.log(h.innerHTML)
+
+        console.log(p[0].innerHTML)
+        console.log(p[0].innerText)
+
+       
+
+        function show(){
+            h=document.querySelector("#heading")
+           p1=document.querySelector('.content')
+
+            h.innerHTML="<i>welcome</i>"
+            h.style.color="red"
+            p1.style.color="red"
+            
+
+        }
+        function showName(){
+            input=document.querySelector("#inp1")
+            alert(input.value)
+        }
+
+
+    </script>
+</body>
+</html>

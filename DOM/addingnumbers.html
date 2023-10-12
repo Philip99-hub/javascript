@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Adding numbers</h1>
+    <input type="number" id="fnumber">
+    <input type="number" id="lnumber"> <br><br>
+    <button onclick="add()">Add the numbers</button> <br><br>
+    <button onclick="show()">change</button>
+    <script>
+        function show(){
+            const head = document.querySelector('#heading')
+            head.style.color="blue"
+        }
+        function add(){
+        num1=document.getElementById('fnumber')
+        num2=document.getElementById('lnumber')
+        alert(Number(num1.value)+Number(num2.value))
+        }
+    </script>
+</body>
+</html>

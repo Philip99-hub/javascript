@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">welcome</h1>
+    <input type="text" id="firstname">
+    <input type="text" id="lastname">
+    <button onclick="showname()">Show full name</button>
+    <button onclick="show()">change</button>
+    <script>
+        function show(){
+          const head=document.querySelector('#heading')
+          head.style.color="red"
+        }
+        function showname(){
+
+            fname =document.querySelector("#firstname")
+            lname=document.querySelector("#lastname")
+
+            alert(fname.value+" "+lname.value )
+        }
+    </script>
+</body>
+</html>

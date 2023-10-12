@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .heading {
+            background-color: rgb(184, 119, 119);
+            height: 100%;
+            width: 100%;
+        }
+
+        p {
+            font-size: 36px;
+            text-align: center;
+        }
+
+        button {
+            font-size: 24px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .less {
+            display: none;
+        }
+
+        .more {
+            display: block;
+        }
+    </style>
+</head>
+
+<!-- <body id="heading">
+    <div>
+        <h1>welcome</h1>
+        <p id="counter">0</p>
+    </div>
+
+    <button onclick="change()">change</button>
+    <button onclick="remove()">remove</button>
+    <button onclick="Count()">count the number</button>
+
+    <script>
+        head = document.querySelector('#heading')
+        function change() {
+            head.classList.add('heading')
+        }
+        function remove() {
+            head.classList.remove('heading')
+        }
+        let count=0;
+        function Count(){
+            count++;
+            document.getElementById('counter').innerHTML=count;
+        }
+    </script> -->
+
+
+<div>
+    <p id="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolores quasi, maiores temporibus excepturi
+        numquam reiciendis repellendus, saepe voluptatum eum eligendi dicta beatae alias atque aut laboriosam ullam
+        placeat inventore quis? Rerum ducimus aliquid unde assumenda consectetur! Quaerat nam aperiam earum et, facere
+
+    </p>
+    
+    <p id="more" class="less">
+        eum animi soluta quos illo quidem ea possimus, ex asperiores suscipit harum maxime delectus, voluptatum
+        blanditiis optio ipsa rerum? Quas tempore delectus vitae, laboriosam repudiandae at aspernatur cupiditate magni
+        labore non ipsa nostrum aperiam quibusdam natus quae fugiat illo magnam sint iste consequatur perferendis enim!
+        Molestias vero culpa architecto incidunt sint fuga vitae blanditiis nam reiciendis. Expedita.
+    </p>
+    <button id="btn1" onclick="more()">read more</button>
+</div>
+<script>
+    const morepara = document.getElementById('more')
+    const btn1 = document.getElementById('btn1')
+
+    function more() {
+        if(btn1.innerHTML=="read more"){
+            morepara.classList.remove('less')
+        morepara.classList.add('more')
+        btn1.innerHTML="read less"
+        }
+        else{
+            morepara.classList.remove('more')
+        morepara.classList.add('less')
+        btn1.innerHTML="read more"
+        }
+
+       
+       
+    }
+</script>
+
+</body>
+
+</html>

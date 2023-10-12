@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        table {
+            border: 2px solid red;
+            width: 25%;
+        }
+
+        td,
+        th {
+            border: 1px solid blue;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="input1" placeholder="name of student">  <span id="sname"></span><br><br>
+    <input type="number" id="input2" placeholder="mark">  <span id="smark"></span>
+    <button id="btn1">add details to the table</button>
+    <table>
+        <thead>
+            <tr>
+                <td>sl no</td>
+                <td>student name</td>
+                <td>mark</td>
+            </tr>
+        </thead>
+        <tbody id="tablebody">
+
+        </tbody>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <input type="text" id="inputmodal1" placeholder="name of student"> <br><br> 
+            <input type="number" id="inputmodal2" placeholder="mark">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="btn3" onclick="save()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+        <script>
+            Tbody = document.getElementById("tablebody")
+            Ipname = document.getElementById("input1")
+            Mark = document.getElementById("input2")
+            btnadd = document.getElementById("btn1")
+            btnedt = document.getElementById("btn2")
+            Ipnamemodal = document.getElementById("inputmodal1")
+            Markmodal = document.getElementById("inputmodal2")
+            btnsave = document.getElementById("btn3")
+            span1 = document.getElementById("sname")
+            span2 = document.getElementById("smark")
+            i = 1
+           
+
+
+
+            btnadd.onclick = function () {
+                if(Ipname.value ==''){
+                    span1.innerHTML = "please enter your name"
+                }
+               
+                else if(Mark.value == ''){
+                    span1.innerHTML = ""
+
+                    span2.innerHTML = "please enter the mark"
+                }
+                else{   
+
+                  span2.innerHTML = ""
+                row = Tbody.insertRow()
+                cell1 = row.insertCell(0)
+                cell2 = row.insertCell(1)
+                cell3 = row.insertCell(2)
+                cell4 = row.insertCell(3)
+                cell5 = row.insertCell(4)
+                cell6 = row.insertCell(5)                
+
+                cell1.innerHTML = i
+                cell2.innerHTML = Ipname.value
+                cell3.innerHTML = Mark.value
+
+                var btn = document.createElement('button')
+                btn.innerHTML = "complete"
+                btn.addEventListener('click',function() {
+                    btn.innerHTML="completed"
+                    btn.disabled=true
+                }) 
+                cell4.appendChild(btn)
+
+                var btnedit = document.createElement('button')
+                btnedit.innerHTML = "EDit"
+                btnedit.setAttribute('data-bs-toggle','modal')
+                btnedit.setAttribute("data-bs-target",'#exampleModal')
+                btnedit.addEventListener('click',function(){
+                    list=event.target.parentElement.parentElement.children
+                    console.log(list)
+                    Ipnamemodal.value=list[1].innerHTML
+                    Markmodal.value=list[2].innerHTML
+
+
+
+                })   
+                             
+                cell5.appendChild(btnedit)
+
+                var btndelete = document.createElement('button')
+                btndelete.innerHTML = "delete"
+                btndelete.addEventListener('click',function(){
+                  event.target.parentElement.parentElement.remove()
+                })
+                cell6.appendChild(btndelete)
+
+
+                i++
+            }
+            }
+            function save(){
+                list[1].innerHTML=Ipnamemodal.value
+                list[2].innerHTML=Markmodal.value
+            }
+        </script>
+    </table>
+</body>
+
+</html>
