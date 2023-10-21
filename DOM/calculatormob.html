@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .calculator {
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        #display {
+            width: 90%;
+            padding: 10px;
+            font-size: 24px;
+        }
+
+        .buttons {
+             margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 5px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 20px;
+            background: #f28303;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body >
+    <div class="calculator">
+        <label for="">Calculator</label>
+        <input type="text" id="display" readonly>
+
+        <div class="buttons">
+            <button class="btn" onclick="clear1()">c</button>
+            <button class="btn" onclick="percentage('%')">%</button>
+            <button class="btn" onclick="backspace()">⌫</button>
+            <button class="btn" onclick="divi('/')">÷</button>
+            <button class="btn" onclick="smpnum(7)">7</button>
+            <button class="btn" onclick="smpnum(8)">8</button>
+            <button class="btn" onclick="smpnum(9)">9</button>
+            <button class="btn" onclick="mul('*')">×</button>
+            <button class="btn" onclick="smpnum(4)">4</button>
+            <button class="btn" onclick="smpnum(5)">5</button>
+            <button class="btn" onclick="smpnum(6)">6</button>
+            <button class="btn" onclick="sub('-')">-</button>
+            <button class="btn" onclick="smpnum(1)">1</button>
+            <button class="btn" onclick="smpnum(2)">2</button>
+            <button class="btn" onclick="smpnum(3)">3</button>
+            <button class="btn" onclick="add('+')" id="addition">+</button>
+            <button class="btn" onclick="smpnum('00')">00</button>
+            <button class="btn" onclick="smpnum(0)">0</button>
+            <button class="btn" onclick="smpnum('.')" id="point">.</button>
+            <button class="btn" onclick="Result()">=</button>
+        </div>
+    </div>
+    <script>
+
+        result = document.getElementById('display')
+
+        function smpnum(o) {
+            result.value += o
+        }
+        function clear1() {
+            result.value = ""
+        }
+        function percentage(percentageval) {
+            result.value = result.value/100 
+        }
+        function backspace() {
+            result.value = result.value.slice(0, -1)
+        }
+        function divi(dividedval) {
+            result.value += dividedval
+        }
+        function mul(multipliedval) {
+            result.value += multipliedval
+        }
+        function sub(substractedval) {
+            result.value += substractedval
+        }
+        function add(addedval) {
+            result.value += addedval
+        }
+        function Result() {
+            try {
+                display.value = eval(display.value);
+            } catch (error) {
+                display.value = "Error";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

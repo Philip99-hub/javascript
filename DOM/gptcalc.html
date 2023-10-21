@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    text-align: center;
+    margin: 20% auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin: 0;
+}
+
+.input-container {
+    margin-top: 20px;
+}
+
+input {
+    width: 100px;
+    padding: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Percentage Calculator</h1>
+        <div class="input-container">
+            <input type="number" id="inputValue" placeholder="Enter a value">
+            <button onclick="calculatePercentage()">Calculate Percentage</button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script src="script.js">
+        function calculatePercentage() {
+    const inputValue = parseFloat(document.getElementById('inputValue').value);
+
+    if (isNaN(inputValue)) {
+        document.getElementById('result').innerHTML = 'Please enter a valid number.';
+        return;
+    }
+
+    const percentage = (inputValue * 100).toFixed(2);
+    document.getElementById('result').innerHTML = `${inputValue} is ${percentage}% of the input value.`;
+}
+
+    </script>
+</body>
+</html>
